@@ -7,7 +7,7 @@ export type tool<Args extends z.ZodRawShape> = {
   schema: Args;
   handler: (
     args: z.infer<z.ZodObject<Args>>,
-    extra: any 
+    extra: RequestHandlerExtra<any, any>
   ) =>
     | Promise<{
         content: Array<{
